@@ -71,7 +71,7 @@ public:
 
 public:
   /// Constructor. Parameter startNow can be set to false to prevent chronometer from starting up at construction.
-  Chrono(Resolution resolution = MILLIS, bool startNow=true);
+  Chrono(Resolution resolution = MILLIS, bool startNow=false);
 
   /**
    * Constructor. Parameter startNow can be set to false to prevent chronometer from starting up at construction.
@@ -84,7 +84,7 @@ public:
    * the chronometer from starting at construction since some functions might
    * trigger errors when called statically.
    */
-  Chrono(chrono_t (*getTime_)(void), bool startNow=true);
+  Chrono(chrono_t (*getTime_)(void), bool startNow=false);
   
   // Starts/restarts the chronometer with optional starting offset.
   void start(chrono_t offset = 0);
